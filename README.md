@@ -40,6 +40,10 @@ SVG and edit its source with a live preview right beside it.
 - **Follows your theme** — the preview surface adapts to light, dark and high-contrast themes, with an optional checkerboard for transparency.
 - **Saves with feedback** — a clear confirmation when your SVG is written to disk.
 
+## Screenshot
+<img width="1902" height="1012" alt="image" src="https://github.com/user-attachments/assets/d52b0a23-ea51-4398-98f1-efba319bd3de" />
+
+
 ## Usage
 
 1. Open any `.svg` file — it opens in **SVG View & Edit**.
