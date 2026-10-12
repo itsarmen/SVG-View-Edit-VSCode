@@ -2,7 +2,21 @@
   <img src="media/icon-512.png" alt="SVG View & Edit icon" width="128" height="128">
 </p>
 
+<p align="center">
+  <a href="https://marketplace.visualstudio.com/items?itemName=ITSARMEN.svg-view-edit">
+    <img src="https://vsmarketplacebadges.dev/version-short/ITSARMEN.svg-view-edit.svg" alt="Marketplace version">
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=ITSARMEN.svg-view-edit">
+    <img src="https://vsmarketplacebadges.dev/installs-short/ITSARMEN.svg-view-edit.svg" alt="Marketplace installs">
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=ITSARMEN.svg-view-edit">
+    <img src="https://vsmarketplacebadges.dev/rating-short/ITSARMEN.svg-view-edit.svg" alt="Marketplace rating">
+  </a>
+</p>
+
 # SVG View & Edit
+
+[**Install from the VS Code Marketplace →**](https://marketplace.visualstudio.com/items?itemName=ITSARMEN.svg-view-edit)
 
 A Visual Studio Code extension that lets you **view and edit SVG files** in one
 place. VS Code normally previews `.svg` files as an image, so editing them means
