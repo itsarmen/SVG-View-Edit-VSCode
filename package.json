@@ -1,0 +1,157 @@
+{
+  "name": "svg-view-edit",
+  "displayName": "SVG View & Edit",
+  "description": "View and edit SVG files side by side: editable SVG source on the left with a live image preview on the right, so you never have to rename a .svg to .xml just to change it.",
+  "version": "1.0.0",
+  "publisher": "itsarmen",
+  "license": "MIT",
+  "author": {
+    "name": "Amiran Kimadze (itsarmen)",
+    "email": "amoswaper@gmail.com",
+    "url": "https://xrow.asia"
+  },
+  "homepage": "https://github.com/itsarmen/SVG-View-Edit-VSCode",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itsarmen/SVG-View-Edit-VSCode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itsarmen/SVG-View-Edit-VSCode/issues"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "svg",
+    "vector",
+    "image",
+    "preview",
+    "viewer",
+    "editor",
+    "xml"
+  ],
+  "galleryBanner": {
+    "color": "#0d1117",
+    "theme": "dark"
+  },
+  "icon": "media/icon.png",
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onCustomEditor:svgViewEdit.editor",
+    "onCommand:svgViewEdit.openEditor",
+    "onCommand:svgViewEdit.openSource",
+    "onCommand:svgViewEdit.openImage"
+  ],
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "svgViewEdit.editor",
+        "displayName": "SVG View & Edit",
+        "selector": [
+          { "filenamePattern": "*.svg" }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "svgViewEdit.openEditor",
+        "title": "SVG View & Edit: Open with SVG View & Edit",
+        "category": "SVG View & Edit",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "svgViewEdit.openSource",
+        "title": "SVG View & Edit: Open SVG Source",
+        "category": "SVG View & Edit",
+        "icon": "$(code)"
+      },
+      {
+        "command": "svgViewEdit.openImage",
+        "title": "SVG View & Edit: Open SVG as Image",
+        "category": "SVG View & Edit",
+        "icon": "$(file-media)"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "svgViewEdit.openEditor",
+          "when": "resourceExtname == .svg",
+          "group": "navigation@30"
+        },
+        {
+          "command": "svgViewEdit.openSource",
+          "when": "resourceExtname == .svg",
+          "group": "navigation@31"
+        },
+        {
+          "command": "svgViewEdit.openImage",
+          "when": "resourceExtname == .svg",
+          "group": "navigation@32"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "svgViewEdit.openSource",
+          "when": "activeCustomEditorId == svgViewEdit.editor",
+          "group": "navigation@1"
+        },
+        {
+          "command": "svgViewEdit.openImage",
+          "when": "activeCustomEditorId == svgViewEdit.editor",
+          "group": "navigation@2"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "SVG View & Edit",
+      "properties": {
+        "svgViewEdit.defaultMode": {
+          "type": "string",
+          "enum": [
+            "split",
+            "source",
+            "preview"
+          ],
+          "default": "split",
+          "description": "The layout used when an SVG is opened."
+        },
+        "svgViewEdit.preview.checkerboard": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show a checkerboard behind the SVG preview to reveal transparency."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "check-types": "tsc --noEmit",
+    "package": "node esbuild.js --production",
+    "vsix": "vsce package"
+  },
+  "dependencies": {
+    "@codemirror/commands": "^6.6.0",
+    "@codemirror/lang-xml": "^6.1.0",
+    "@codemirror/language": "^6.10.3",
+    "@codemirror/search": "^6.5.6",
+    "@codemirror/state": "^6.4.1",
+    "@codemirror/theme-one-dark": "^6.1.2",
+    "@codemirror/view": "^6.34.1",
+    "codemirror": "^6.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.2.1",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.0"
+  }
+}
