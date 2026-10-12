@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="media/icon-512.png" alt="SVG View & Edit icon" width="128" height="128">
+  <img src="media/banner.png" alt="SVG View & Edit" width="1280">
 </p>
 
 <p align="center">
